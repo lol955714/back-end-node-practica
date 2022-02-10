@@ -6,6 +6,7 @@ exports.findAllNovelas = function (req, res) {
   novela.find(function (err, novelas) {
     if (err) res.send(500, err.message);
     res.status(200).jsonp(novelas);
+
   });
 };
 exports.findById = function(req, res) {
@@ -31,7 +32,9 @@ exports.addNovela = function (req, res) {
   };
   exports.updateNovela = function (req, res) {
     novela.findById(req.params.id, function (err, nove) {
-    nove.title = req.body.petId;
+    console.log(req.body)
+    nove.id=req.body._id
+    nove.title = req.body.title;
     nove.year = req.body.year;
     nove.country = req.body.country;
     nove.poster = req.body.poster;
