@@ -1,5 +1,5 @@
 exports = module.exports = function(app, mongoose) {
-var novela = new mongoose.Schema({
+let novela = new mongoose.Schema({
     title: { type: String },
     year: { type: Date },
     country: { type: String },

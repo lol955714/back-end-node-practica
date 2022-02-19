@@ -1,5 +1,5 @@
-var mongoose = require("mongoose");
-var novela = mongoose.model("novela");
+let mongoose = require("mongoose");
+let novela = mongoose.model("novela");
 
 //GET - Return all tvshows in the DB
 exports.findAllNovelas = function (req, res) {
@@ -16,7 +16,7 @@ exports.findById = function(req, res) {
     });
 };
 exports.addNovela = function (req, res) {  
-    var nove = new novela({
+    let nove = new novela({
       title: req.body.title,
       year: req.body.year,
       country: req.body.country,
